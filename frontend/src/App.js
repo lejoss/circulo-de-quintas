@@ -1,93 +1,39 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { major, minor, MAJOR_CIRCLE, MINOR_CIRCLE } from './scales'
+import CircleOfFifhts from './components/CircleOfFifhts';
+import MajorCircle from './components/MajorCircle';
+import MinorCircle from './components/MinorCircle';
+import ScalePanel from './components/ScalePanel';
+import Tone from './components/Tone';
 import './App.css';
 
 function App() {
+  const [scale, setScale] = useState([]);
+
+  function onClickTone(tone) {
+    if (tone.includes('m')) {
+      if (tone.includes('#') || tone.includes('b')) {
+        return setScale(minor(tone.substring(0, 2)))
+      }
+      return setScale(minor(tone.charAt(0)))
+    }
+
+    return setScale(major(tone))
+  }
+
   return (
     <div className="App">
-      <div className="circle-panel">
-        <ul className="circle">
-          <li>
-            <div className="text">1</div>
-          </li>
-          <li>
-            <div className="text">2</div>
-          </li>
-          <li>
-            <div className="text">3</div>
-          </li>
-          <li>
-            <div className="text">4</div>
-          </li>
-          <li>
-            <div className="text">5</div>
-          </li>
-          <li>
-            <div className="text">6</div>
-          </li>
-          <li>
-            <div className="text">7</div>
-          </li>
-          <li>
-            <div className="text">8</div>
-          </li>
-          <li>
-            <div className="text">9</div>
-          </li>
-          <li>
-            <div className="text">10</div>
-          </li>
-          <li>
-            <div className="text">11</div>
-          </li>
-          <li>
-            <div className="text">12</div>
-          </li>
-        </ul>
-        <ul className="inner-circle">
-          <li>
-            <div className="text">1</div>
-          </li>
-          <li>
-            <div className="text">2</div>
-          </li>
-          <li>
-            <div className="text">3</div>
-          </li>
-          <li>
-            <div className="text">4</div>
-          </li>
-          <li>
-            <div className="text">5</div>
-          </li>
-          <li>
-            <div className="text">6</div>
-          </li>
-          <li>
-            <div className="text">7</div>
-          </li>
-          <li>
-            <div className="text">8</div>
-          </li>
-          <li>
-            <div className="text">9</div>
-          </li>
-          <li>
-            <div className="text">10</div>
-          </li>
-          <li>
-            <div className="text">11</div>
-          </li>
-          <li>
-            <div className="text">12</div>
-          </li>
-        </ul> 
-      </div>
-      <div className="scale-panel">
-        <div>1 - 2 - 3 - 4 - 5 - 6 - 7 - 8</div>
-        <div>
-          <button>play</button>
-        </div>
-      </div>
+      <CircleOfFifhts>
+        <MajorCircle>
+          {MAJOR_CIRCLE.map(n => <Tone onClick={onClickTone} key={n} note={n} />)}
+        </MajorCircle>
+        <MinorCircle>
+          {MINOR_CIRCLE.map(n => <Tone onClick={onClickTone} key={n} note={n} />)}
+        </MinorCircle>
+      </CircleOfFifhts>
+      <ScalePanel>
+        <p>{scale}</p>
+      </ScalePanel>
     </div>
   );
 }
