@@ -3,6 +3,7 @@
   display: flex;
   flex-direction: row;
   min-height: 100vh;
+  /* background-color: lightsteelblue; */
 }
 
 .circle-panel {
@@ -19,28 +20,38 @@
   flex: 1;
   flex-direction: column;
   justify-content: center;
-  background-color: lightblue;
+}
+
+.scale-text {
+  font-size: 5rem;
+  color: #333;
+}
+.scale-title {
+  font-size: 5rem;
+  color: #333;
 }
 
 .circle {
+  cursor: pointer;
   position: relative;
-  border: 1px solid black;
+  border: 2px solid #333;
   padding: 0;
   margin: 1em auto;
-  width: 30em;
-  height: 30em;
+  width: 32em;
+  height: 32em;
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
 }
 
 .inner-circle {
+  cursor: pointer;
   position: absolute;
-  border: 1px solid black;
+  border: 2px solid #333;
   padding: 0;
   margin: 1em auto;
-  width: 18em;
-  height: 18em;
+  width: 20em;
+  height: 20em;
   border-radius: 50%;
   list-style: none;
   overflow: hidden;
@@ -55,6 +66,9 @@ li {
   transform-origin: 0% 100%;
   border:  1px solid black;
 }
+/* li:hover {
+  background-color: beige;
+} */
 
 .text {
   position: absolute;
@@ -64,6 +78,7 @@ li {
   text-align: center;
   transform: skewY(60deg) rotate(15deg);
   padding-top: 20px;
+  font-size: 1.5rem;
 }
 li:first-child {
   transform: rotate(0deg) skewY(-60deg);

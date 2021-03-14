@@ -1,25 +1,38 @@
 import { useState } from 'react';
 import { major, minor, MAJOR_CIRCLE, MINOR_CIRCLE } from './scales'
+// import { seqOnce } from './tone'
 import CircleOfFifhts from './components/CircleOfFifhts';
 import MajorCircle from './components/MajorCircle';
 import MinorCircle from './components/MinorCircle';
 import ScalePanel from './components/ScalePanel';
 import Tone from './components/Tone';
+
 import './App.css';
 
 function App() {
-  const [scale, setScale] = useState([]);
+  let [scale, setScale] = useState([]);
+  let [title, setTitle] = useState('');
 
   function onClickTone(tone) {
     if (tone.includes('m')) {
       if (tone.includes('#') || tone.includes('b')) {
-        return setScale(minor(tone.substring(0, 2)))
+        setScale(minor(tone.substring(0, 2)));
+        setTitle(`${tone.substring(0, 2)} Minor`)
+        return
       }
-      return setScale(minor(tone.charAt(0)))
+      setScale(minor(tone.charAt(0)))
+      setTitle(`${tone.charAt(0)} Minor`)
+      return
     }
 
-    return setScale(major(tone))
+    setScale(major(tone))
+    setTitle(`${tone.substring(0, 2)} Major`)
+    return
   }
+
+  // function play() {
+  //   return seqOnce(scale);
+  // }
 
   return (
     <div className="App">
@@ -32,7 +45,8 @@ function App() {
         </MinorCircle>
       </CircleOfFifhts>
       <ScalePanel>
-        <p>{scale}</p>
+        <p className="scale-title">{title}</p>
+        <p className="scale-text">{scale}</p>
       </ScalePanel>
     </div>
   );
