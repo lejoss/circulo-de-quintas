@@ -13,7 +13,7 @@ function App() {
   let [scale, setScale] = useState([]);
   let [title, setTitle] = useState('');
 
-  function onClickToneSetScale(tone) {
+  function onClickToneSetScale(tone: String) {
     if (tone.includes('m')) {
       if (tone.includes('#') || tone.includes('b')) {
         setScale(minor(tone.substring(0, 2)));
