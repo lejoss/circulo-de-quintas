@@ -13,7 +13,7 @@ function App() {
   let [scale, setScale] = useState([]);
   let [title, setTitle] = useState('');
 
-  function onClickTone(tone) {
+  function onClickToneSetScale(tone) {
     if (tone.includes('m')) {
       if (tone.includes('#') || tone.includes('b')) {
         setScale(minor(tone.substring(0, 2)));
@@ -38,10 +38,10 @@ function App() {
     <div className="App">
       <CircleOfFifhts>
         <MajorCircle>
-          {MAJOR_CIRCLE.map(n => <Tone onClick={onClickTone} key={n} note={n} />)}
+          {MAJOR_CIRCLE.map(n => <Tone onClick={onClickToneSetScale} key={n} note={n} />)}
         </MajorCircle>
         <MinorCircle>
-          {MINOR_CIRCLE.map(n => <Tone onClick={onClickTone} key={n} note={n} />)}
+          {MINOR_CIRCLE.map(n => <Tone onClick={onClickToneSetScale} key={n} note={n} />)}
         </MinorCircle>
       </CircleOfFifhts>
       <ScalePanel>
