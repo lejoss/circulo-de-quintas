@@ -11,23 +11,32 @@ import Tone from './components/Tone';
 
 import './App.css';
 
+type Scale = {
+  notes: []
+}
+
+
 function App() {
-  let [scale, setScale] = useState([]);
+  let [majorScale, setMajorScale] = useState([]);
+  let [minorScale, setMinorScale] = useState([]);
   let [title, setTitle] = useState('');
 
   function onClickToneSetScale(tone: String) {
     if (tone.includes('m')) {
       if (tone.includes('#') || tone.includes('b')) {
-        setScale(minor(tone.substring(0, 2)));
+        setMinorScale(minor(tone.substring(0, 2)));
+        setMajorScale(major(tone.substring(0, 2)))
         setTitle(`${tone.substring(0, 2)} Minor`)
         return
       }
-      setScale(minor(tone.charAt(0)))
+      setMinorScale(minor(tone.charAt(0)))
+      setMajorScale(major(tone.charAt(0)))
       setTitle(`${tone.charAt(0)} Minor`)
       return
     }
 
-    setScale(major(tone))
+    setMajorScale(major(tone))
+    setMinorScale(minor(tone))
     setTitle(`${tone.substring(0, 2)} Major`)
     return
   }
@@ -47,8 +56,9 @@ function App() {
         </MinorCircle>
       </CircleOfFifhts>
       <ScalePanel>
-        <Title>{title}</Title>
-        <Scale>{scale}</Scale>
+        <Title>{title.charAt(0)}</Title>
+        <Scale name="maj">{majorScale}</Scale>
+        <Scale name="min">{minorScale}</Scale>
       </ScalePanel>
     </div>
   );
