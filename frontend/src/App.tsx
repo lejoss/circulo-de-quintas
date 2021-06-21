@@ -11,11 +11,6 @@ import Tone from './components/Tone';
 
 import './App.css';
 
-type Scale = {
-  notes: []
-}
-
-
 function App() {
   let [majorScale, setMajorScale] = useState(null);
   let [minorScale, setMinorScale] = useState(null);
