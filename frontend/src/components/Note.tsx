@@ -8,7 +8,7 @@ export default function Note(props: NoteProps) {
 	return (
 		<div onClick={() => props.onClick(props.note)}>
 			<p className="scale-text">{props.note}</p>
-			{props.triad && props.triad[0] === props.note ? <div style={{ fontSize: '3rem'}}>{props.triad}</div> : null}
+			{props.triad && props.triad[0] === props.note ? <div style={{ fontSize: '4rem', color: 'gray' }}>{props.triad}</div> : null}
 		</div>
 	)
 }

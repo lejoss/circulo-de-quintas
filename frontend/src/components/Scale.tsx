@@ -12,11 +12,11 @@ export default function Scale(props: ScaleProps) {
 	function createTriad(tone: String) {
 		if (props.name && props.name === 'maj') {
 			const [a, , b, , c] = major(tone)
-			setTriad([a, b, c])
+			setTriad([a, '-', b, '-', c])
 
 		} else if (props.name && props.name === 'min') {
 				const [a, , b, , c] = minor(tone)
-				setTriad([a, b, c])
+				setTriad([a, '-', b, '-', c])
 		}
 	}
 
