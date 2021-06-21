@@ -17,8 +17,8 @@ type Scale = {
 
 
 function App() {
-  let [majorScale, setMajorScale] = useState([]);
-  let [minorScale, setMinorScale] = useState([]);
+  let [majorScale, setMajorScale] = useState(null);
+  let [minorScale, setMinorScale] = useState(null);
   let [title, setTitle] = useState('');
 
   function onClickToneSetScale(tone: String) {
