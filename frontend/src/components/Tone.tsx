@@ -1,13 +1,10 @@
 type ToneProps = {
 	note: String;
-	// onClick: (note: String) => void
+	onClick: (note: String) => void
 }
 export default function Tone(props: ToneProps) {
-	function setTriad() {
-		return console.log('tone', props.note)
-	}
 	return (
-		<li onClick={setTriad}>
+		<li onClick={() => props.onClick(props.note)}>
 			<div className="text">{props.note}</div>
 		</li>
 	)
