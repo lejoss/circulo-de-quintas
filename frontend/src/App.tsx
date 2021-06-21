@@ -5,6 +5,8 @@ import CircleOfFifhts from './components/CircleOfFifhts';
 import MajorCircle from './components/MajorCircle';
 import MinorCircle from './components/MinorCircle';
 import ScalePanel from './components/ScalePanel';
+import Scale from './components/Scale';
+import Title from './components/Title';
 import Tone from './components/Tone';
 
 import './App.css';
@@ -45,8 +47,8 @@ function App() {
         </MinorCircle>
       </CircleOfFifhts>
       <ScalePanel>
-        <p className="scale-title">{title}</p>
-        <p className="scale-text">{scale}</p>
+        <Title>{title}</Title>
+        <Scale>{scale}</Scale>
       </ScalePanel>
     </div>
   );

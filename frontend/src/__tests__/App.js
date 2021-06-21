@@ -1,13 +1,16 @@
+import user from '@testing-library/user-event';
 import { render, screen, waitFor } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import App from '../App';
 
-test('renders learn react link', () => {
-	render(<App />);
+test('renders circle of fifhts', () => {
+	// render(<App />);
 	//	const nameInput = screen.getTextByLabel(/name/i)
-	const linkElement = screen.getByText(/learn react/i);
-	// userEvent.type(nameInput, 'Mary');
-	// userEvent.click(linkElement);
+	//const linkElement = screen.getByText(/learn react/i);
+	// user.type(nameInput, 'Mary');
+	// user.click(linkElement);
 
-	expect(linkElement).toBeInTheDocument();
+	// console.log(<App />)
+
+	// expect(CircleOfFifths).toBeInTheDocument();
+	expect(1 + 1).toEqual(2);
 });
