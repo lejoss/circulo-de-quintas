@@ -22,7 +22,6 @@ export default function Scale(props: ScaleProps) {
 
 	return <div style={{ display: 'flex', gap: 30 }}>
 		{props.children && <p className="scale-text">{props.name}</p>}
-		{/* <p className="scale-text">{props.children}</p> */}
 		{React.Children.map(props.children, (note: any) => {
 			return <Note note={note} onClick={createTriad} triad={triad} />
 		})}
