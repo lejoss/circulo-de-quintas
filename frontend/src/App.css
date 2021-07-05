@@ -24,9 +24,15 @@
 }
 
 .scale-text {
+  margin-top: 0;
   cursor: pointer;
   font-size: 5rem;
   color: #333;
+}
+
+.grade-text {
+  font-size: 3rem;
+  color: gray;
 }
 .scale-title {
   font-size: 5rem;

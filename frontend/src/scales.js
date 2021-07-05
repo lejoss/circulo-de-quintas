@@ -1,5 +1,8 @@
 import scale from 'music-scale';
 
+const majorGrades = ['I', 'ii', 'iii', 'IV', 'V', 'vi', 'viiº']
+const minorGrades = ['i', 'iiº', 'III', 'iv', 'v', 'VI', 'VII']
+
 const MAJOR_CIRCLE = ['C', 'G', 'D', 'A', 'E', 'B', 'Gb', 'Db', 'Ab', 'Eb', 'Bb', 'F'];
 const MINOR_CIRCLE = ['Am', 'Em', 'Bm', 'F#m', 'C#m', 'G#m', 'Ebm', 'Bbm', 'Fm', 'Cm', 'Gm', 'Dm'];
 
@@ -17,4 +20,6 @@ export {
 	lydian,
 	mixolydian,
 	dorian,
+	majorGrades,
+	minorGrades
 }

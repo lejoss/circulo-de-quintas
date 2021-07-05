@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { major, minor, MAJOR_CIRCLE, MINOR_CIRCLE } from './scales'
+import { major, minor, MAJOR_CIRCLE, MINOR_CIRCLE, majorGrades, minorGrades } from './scales'
 // import { seqOnce } from './tone'
 import CircleOfFifhts from './components/CircleOfFifhts';
 import MajorCircle from './components/MajorCircle';
@@ -52,8 +52,8 @@ function App() {
       </CircleOfFifhts>
       <ScalePanel>
         <Title>{title.charAt(0)}</Title>
-        <Scale name="maj">{majorScale}</Scale>
-        <Scale name="min">{minorScale}</Scale>
+        <Scale type="maj" grades={majorGrades}>{majorScale}</Scale>
+        <Scale type="min" grades={minorGrades}>{minorScale}</Scale>
       </ScalePanel>
     </div>
   );
