@@ -11,7 +11,7 @@ export default function Note(props: NoteProps) {
 	return (
 		<div onClick={() => props.onClick(props.note)}>
 			<p className="grade-text">{props.grade}</p>
-			<p className="scale-text">{char === char.toUpperCase() ? `${props.note}m` : props.note}</p>
+			<p className="scale-text">{char === char.toLowerCase() ? `${props.note}m` : props.note}</p>
 			{props.triad && props.triad[0] === props.note ? <div style={{ fontSize: '4rem', color: 'gray' }}>{props.triad}</div> : null}
 		</div>
 	)
