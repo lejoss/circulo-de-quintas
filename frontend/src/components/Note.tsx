@@ -1,5 +1,3 @@
-import { majorGrades } from "../scales"
-
 type NoteProps = {
 	note: String;
 	onClick: (note: String) => void;

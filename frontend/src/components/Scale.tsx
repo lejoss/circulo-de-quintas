@@ -1,6 +1,5 @@
 import React from 'react'
 import Note from './Note'
-import RomanNotation from './RomanNotation'
 import { major, minor } from '../scales'
 
 type ScaleProps = {
